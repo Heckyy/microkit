@@ -5,7 +5,7 @@
 
 /* DELET SOON */
 body {
-    min-height: 2000px;
+    min-height: 20000px;
 }
 .button-primary {
     background-color: #0c97fa;
@@ -86,3 +86,31 @@ body {
     height: 600px;
 }
 /* End Of Image Section */
+
+/* MVP Section */
+.mvp-section {
+    margin-top: 100px;
+}
+.title-section {
+    font-family: "Syne", sans-serif;
+    font-size: 40px;
+    line-height: 52px;
+}
+
+.subtitle-section {
+    margin-top: 52px;
+}
+.title-mvp {
+    font-family: "Syne", sans-serif;
+    font-size: 28px;
+    line-height: 40px;
+    margin-bottom: 16px;
+}
+
+.text-mvp {
+    font-family: "DM Sans", sans-serif;
+    font-size: 16px;
+    color: #757575;
+    line-height: 24px;
+}
+/* End Of MVP Section */
