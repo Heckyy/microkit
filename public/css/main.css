@@ -1,0 +1,88 @@
+/* My Fonts */
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Syne:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;500&display=swap");
+
+/* DELET SOON */
+body {
+    min-height: 2000px;
+}
+.button-primary {
+    background-color: #0c97fa;
+    border: none;
+    width: 93px;
+    height: 38px;
+    border-radius: 6px;
+    padding: 6px 6px 6px 6px;
+    font-family: "DM Sans", sans-serif;
+    font-size: 14px;
+}
+
+.button-secondary {
+    background-color: transparent;
+    border: 1px solid #0c97fa;
+    width: 93px;
+    height: 38px;
+    border-radius: 6px;
+    padding: 6px 6px 6px 6px;
+    color: #0c97fa;
+    font-family: "DM Sans", sans-serif;
+    font-size: 14px;
+}
+
+/* Hero Section */
+#hero-section {
+    margin-top: 100px;
+}
+.container-text {
+    width: 798px;
+    height: 336px;
+    top: 180px;
+    left: 219px;
+}
+.container-sub-text {
+    width: 798px;
+    height: 56px;
+    margin-top: 16px;
+}
+.hero-title {
+    font-family: "Syne", sans-serif;
+    font-size: 64px;
+    line-height: 84px;
+}
+.sub-title-hero {
+    font-family: "DM Sans", sans-serif;
+    font-size: 16px;
+    color: #757575;
+    font-weight: 200;
+}
+
+.container-button-hero {
+    margin-top: 64px;
+}
+.button-hero {
+    width: 208px;
+    height: 40px;
+    border-radius: 6px;
+    padding: 8px, 16px, 8px, 16px;
+    font-family: "Inter", sans-serif;
+    font-weight: 300;
+    font-size: 16px;
+    background-color: #0c97fa;
+    border: none;
+}
+/* End Of Hero Section */
+
+/* Image Section */
+.img-section {
+    margin-top: 100px;
+}
+.container-img-section {
+    background-color: #eaf6fe;
+    padding: 183px 90px 183px 90px;
+}
+.img-section img {
+    width: 1074px;
+    height: 600px;
+}
+/* End Of Image Section */
