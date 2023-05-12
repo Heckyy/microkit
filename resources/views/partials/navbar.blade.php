@@ -59,7 +59,9 @@
                     </div>
                 @else
                     {{-- user not login --}}
-                    <div class="user-no-login">
+                    <div class="container user-no-login">
+
+
 
                         <div class="d-flex flex-row justify-content-between">
                             <img src="{{ asset('image/MicroKit.svg') }}" alt="" width="125" height="auto"

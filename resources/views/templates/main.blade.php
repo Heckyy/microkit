@@ -26,20 +26,20 @@
 
 <body>
 
-    <div class="container">
 
 
-        @yield('header')
 
-        @yield('hero-image')
+    @yield('header')
 
-        @yield('body')
+    @yield('hero-image')
 
-        @yield('footer-cta')
+    @yield('body')
 
-        @yield('footer')
+    @yield('footer-cta')
 
-    </div>
+    @yield('footer')
+
+
 
 
 
