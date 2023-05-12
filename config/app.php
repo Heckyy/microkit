@@ -195,6 +195,12 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
+        /*
+         * Microkit Service Providers...
+         */
+
+        App\Providers\Auth\AuthProvider::class,
+
     ],
 
     /*

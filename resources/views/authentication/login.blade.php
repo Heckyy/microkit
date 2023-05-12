@@ -3,9 +3,9 @@
 
 @section('head-link')
     <link rel="stylesheet" href="{{ asset('css/authentication.css') }}">
+    <script src="https://apis.google.com/js/api.js"></script>
 
-
-    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <script src="https://accounts.google.com/gsi/client" onload="initClient()" async defer></script>
 @endsection
 
 
@@ -14,65 +14,73 @@
 
         <div class="auth-wrapper">
             <div class="row g-0 d-sm-flex align-items-center">
-                <div class="col-sm-6">
+                <div class="col-sm-6 order-1 order-sm-0">
                     <div class="img-login"></div>
                 </div>
 
-                <div class="col-sm-4 offset-sm-1">
-                    <h2 class="title-login">Ready to Create?</h2>
-                    <p class="subtitle-login">Sign in to Begin Crafting Your Website</p>
+                <div
+                    class="col-sm-4 offset-sm-1 order-0 order-sm-1 d-sm-flex flex-column justify-content-around wrapper-auth-form">
 
-                    <form id="loginForm" action="">
+                    <div>
+                        <img src="{{ asset('image/MicroKit.svg') }}" alt="" width="125" height="auto"
+                            class="d-inline-block align-text-top microkit">
+                    </div>
 
-                        <div class="input-email">
-                            <label for="inputEmail" class="form-label">Email address</label>
-                            <input type="email" class="form-control" id="inputEmail" placeholder="jamescook@gmail.com">
+                    @if ($errors->any())
+                        <div class="alert alert-danger" role="alert">
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
                         </div>
-
-                        <div class="input-password">
-                            <label for="inputPassword" class="col-sm-2 col-form-label">Password</label>
-                            <input type="password" class="form-control" id="inputPassword" placeholder="Enter password">
-                        </div>
-                    </form>
+                    @endif
 
 
+                    <div>
+                        <h2 class="title-login">Ready to Create?</h2>
+                        <p class="subtitle-login">Sign in to Begin Crafting Your Website</p>
 
-                    <button id="btnSignIn" type="button" class="btn btn-primary container">Sign In</button>
+                        <form id="loginForm" action="/sign-in/do-login" method="POST">
 
-                    <hr>
+                            @csrf
 
-                    <button id="googleLogin" class="container" onclick="onCustomSignIn()">
-                        <i class="google-icon"></i>
-                        Log in via Google
-                    </button>
+                            <div class="input-email">
+                                <label for="inputEmail" class="col-form-label">Email address</label>
+                                <input type="email" name="email" class="form-control" id="inputEmail"
+                                    placeholder="jamescook@gmail.com" required>
+                            </div>
 
-                    <p class="dont-have-account text-center">Do you not have an account yet?
-                        <span class="sign-up">
-                            <a href="http://">Sign up</a>
-                        </span>
-                    </p>
+                            <div class="input-password">
+                                <label for="inputPassword" class="col-form-label">Password</label>
+                                <input type="password" name="password" class="form-control" id="inputPassword"
+                                    placeholder="Enter password" required>
+                            </div>
+
+                            <button id="btnSignIn" type="submit" class="btn btn-primary container">Sign in</button>
+
+                            <hr>
+
+
+                        </form>
+
+                        <button id="googleLogin" class="container" onclick="getToken()">
+                            <i class="google-icon"></i>
+                            Sign in via Google
+                        </button>
+                        <p class="dont-have-account text-center">Do you not have an account yet?
+                            <span class="sign-up">
+                                <a href="{{ url('/sign-up') }}">Sign up</a>
+                            </span>
+                        </p>
+                    </div>
                 </div>
 
             </div>
         </div>
     </div>
+@endsection
 
-
-    <script>
-        function onSignIn(googleUser) {
-            // Get the user's ID token and send it to your server for verification
-            var id_token = googleUser.getAuthResponse().id_token;
-            console.log('ID token:', id_token);
-        }
-
-        gapi.load('auth2', function() {
-            gapi.auth2.init({
-                client_id: 'YOUR_CLIENT_ID'
-            });
-        });
-
-        function onCustomSignIn() {
-            gapi.auth2.getAuthInstance().signIn().then(onSignIn);
-        }
-    </script>
+@section('footer-script')
+    <script src="{{ asset('js/auth/login-google-oauth.js') }}"></script>
 @endsection

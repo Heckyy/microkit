@@ -1,10 +1,13 @@
 @extends('templates.main')
 
+@section('head-link')
+    <link rel="stylesheet" href="{{ asset('css/authentication.css') }}">
+@endsection
+
 @section('header')
     @include('partials.navbar')
     @include('partials.hero')
 @endsection
-
 
 @section('hero-image')
     @include('partials.hero-image')
@@ -30,4 +33,9 @@
 
 @section('footer')
     @include('partials.footer')
+@endsection
+
+
+@section('footer-script')
+    <script src="{{ asset('js/popper.js') }}"></script>
 @endsection

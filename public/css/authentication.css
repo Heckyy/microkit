@@ -1,5 +1,4 @@
 .img-login {
-
     background-image: url('../image/image-login.png');
     background-repeat: no-repeat;
     background-size: contain;
@@ -12,6 +11,10 @@
     position: relative;
     top: 50%;
     transform: translateY(-50%)
+}
+
+.wrapper-auth-form {
+    height: 92vh;
 }
 
 .title-login {
@@ -49,6 +52,7 @@
 
 
 #btnSignIn {
+    color: white;
     margin-top: 32px;
     background: #0C97FA;
     border: none;
@@ -62,6 +66,7 @@
 input {
     background: rgba(12, 151, 250, 0.2) !important;
     border: none !important;
+    margin-bottom: 16px;
 }
 
 
@@ -70,6 +75,7 @@ input {
 }
 
 .dont-have-account {
+    color: #9E9E9E;
     margin-top: 32px;
     font-family: 'DM Sans';
     font-style: normal;
@@ -116,4 +122,52 @@ a {
     gap: 4px;
 
     background-color: white;
+}
+
+
+
+@media only screen and (max-width: 600px) {
+    .auth-wrapper {
+        margin-top: 24px;
+        top: 0;
+        transform: none;
+    }
+
+
+    .img-login {
+        background-image: url('../image/image-login-mobile.png');
+        background-repeat: no-repeat;
+        background-size: contain;
+
+        width: auto;
+        height: 280px;
+        margin-bottom: 16px;
+        /* height: 400px;
+        width: auto;
+        background-size: contain;
+
+        
+        margin-bottom: 16px;
+        border-bottom-left-radius: 24px;
+        border-bottom-right-radius: 24px; */
+    }
+
+    .wrapper-auth-form {
+        height: 100%;
+    }
+
+    .microkit {
+        margin-bottom: 34px;
+    }
+
+    .title-login {
+        margin-bottom: 16px;
+    }
+
+    .dont-have-account {
+        margin-bottom: 32px;
+    }
+
+
+
 }

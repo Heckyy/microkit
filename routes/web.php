@@ -17,12 +17,39 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-Route::get("/", [HomeController::class, "index"]);
+
+
+Route::controller(HomeController::class)->group(function () {
+    Route::get("/", "index");
+    Route::middleware(['auth'])->group(function () {
+        Route::get("/profile-setting", "profileSetting");
+        Route::get("/profile-setting/update", function () {
+            redirect('/sign-in');
+        });
+        Route::post("/profile-setting/update", "update");
+
+        Route::get('/download', 'download');
+    });
+});
+
+
 
 
 Route::controller(AuthenticationController::class)->group(function () {
 
-    Route::get('/login', 'login');
+    Route::middleware('guest')->group(function () {
+        Route::get('/sign-in', 'login')->name('sign-in');
 
-    Route::get('/register', 'register');
+        Route::post('/sign-in/do-login', 'processLoginEmail');
+
+        Route::get('/sign-in/{accessToken}', 'processLoginOauth');
+
+        Route::get('/sign-up', 'register');
+
+        Route::get('/sign-up/{accessToken}', 'processRegisterOauth');
+
+        Route::post('/sign-up/do-register', 'processRegisterEmail');
+    });
+
+    Route::get('/sign-out', 'signOut');
 });
