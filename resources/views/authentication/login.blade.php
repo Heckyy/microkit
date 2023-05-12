@@ -64,7 +64,7 @@
 
                         </form>
 
-                        <button id="googleLogin" class="container" onclick="getToken()">
+                        <button id="googleLogin" type="button" class="btn container" onclick="getToken()">
                             <i class="google-icon"></i>
                             Sign in via Google
                         </button>

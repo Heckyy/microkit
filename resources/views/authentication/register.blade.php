@@ -80,7 +80,7 @@
 
                         </form>
 
-                        <button id="googleLogin" class="container" onclick="getToken()">
+                        <button type="button" id="googleLogin" class="btn container" onclick="getToken()">
                             <i class="google-icon"></i>
                             Create a new account via Google
                         </button>
