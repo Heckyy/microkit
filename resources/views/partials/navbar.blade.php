@@ -63,7 +63,7 @@
 
 
 
-                        <div class="d-flex flex-row justify-content-between">
+                        <div class="d-flex flex-row justify-content-between d-sm-none">
                             <img src="{{ asset('image/MicroKit.svg') }}" alt="" width="125" height="auto"
                                 class="d-inline-block align-text-top">
                             <!-- Tombol Close -->
@@ -72,20 +72,28 @@
                         </div>
 
 
-                        <div class="row d-flex flex-column align-items-center content-user-no-login">
+                        <div class="d-sm-flex flex-row">
 
 
-                            <img src="{{ asset('image/mobile-regis-illustration.png') }}" alt="" srcset=""
-                                class="img-no-login img-fluid">
+                            <div class="d-sm-none">
 
-                            <div class="text-no-login">Register your account and get ready to experience the ease and
-                                speed of building your
-                                own website!</div>
+
+                                <img src="{{ asset('image/mobile-regis-illustration.png') }}" alt=""
+                                    srcset="" class="img-no-login img-fluid">
+
+                                <div class="text-no-login">Register your account and get ready to experience
+                                    the
+                                    ease and
+                                    speed of building your
+                                    own website!</div>
+
+                            </div>
 
                             <a href="/sign-in">
                                 <button class="btn btn-primary me-lg-3 button-secondary">Sign
                                     In</button>
                             </a>
+
                             <a href="/sign-up">
                                 <button class="btn btn-primary button-primary container-fluid">Sign Up</button>
                             </a>
@@ -97,7 +105,7 @@
 
                     </div>
 
-                    <div class="container bg-primary-surface end-footer-mobile">
+                    <div class="container bg-primary-surface end-footer-mobile d-sm-none">
                         <div class="text-center copyright">
                             © 2022 MicroKit by Microconn. All rights reserved.
                         </div>
